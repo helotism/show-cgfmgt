@@ -1,0 +1,10 @@
+[Unit]
+Description=Listens to a button and changes a RGB led's color
+After=local-fs.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'cd /opt/helotism/show-cfgmgt_venv; source bin/activate; ./app.py'
+
+[Install]
+WantedBy=multi-user.target

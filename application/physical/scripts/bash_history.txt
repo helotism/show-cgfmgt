@@ -1,0 +1,5 @@
+curl -u cprior https://api.github.com/orgs/helotism/repos -d {"name":"show-cgfmgt","description":"Demonstration of Configuration Management with Saltstack and Git","homepage":"","auto_init":"true","license_template":"mit","has_wiki":"false","has_issues":"true","has_downloads":"false"}
+
+salt 'axle' state.apply show-cfgmgt saltenv=base
+
+
