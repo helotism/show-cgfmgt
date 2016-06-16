@@ -5,8 +5,8 @@ backup file:
      - {{ data['data']['path'] }}
      - {{ data['data']['path'] }}.bak
 
-#apply the full state file again:
-#  local.state.apply
-#   - tgt: {{ data['data']['id'] }}
-#   - arg:
-#     - show-cfgmnt
+apply the full state file again:
+  local.state.apply
+   - tgt: {{ data['data']['id'] }}
+   - arg:
+     - show-cfgmnt

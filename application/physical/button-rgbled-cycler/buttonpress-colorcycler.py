@@ -23,12 +23,29 @@ elif ( os.path.isfile('config_orig.yml')):
   with open("config.yml", "r") as configfile:
     cfg = yaml.load(configfile)
 
-
 led = RGBLED(red=cfg['red_pin'], green=cfg['green_pin'], blue=cfg['blue_pin'])
 button = Button(cfg['button_pin'])
 
 state = 'init'
 led.color = (0,0,1)
+
+if ( os.path.isfile('performance.yml')):
+  with open("performance.yml", "r") as configfile:
+    cfg = yaml.load(configfile)
+elif ( os.path.isfile('performance_orig.yml')):
+  with open("performance.yml", "r") as configfile:
+    cfg = yaml.load(configfile)
+
+if cfg['performance'] == "":
+  speed=2
+elif cfg['performance'] == "silver":
+  speed=2
+elif cfg['performance'] == "gold":
+  speed=1
+elif cfg['performance'] == "platinum":
+  speed=0.5
+else:
+   speed=2
 
 def state_transition():
 
